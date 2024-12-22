@@ -3,9 +3,19 @@ const app = express();
 const dotenv = require('dotenv');
 const connectDb = require('./config/dataBase.js');
 
+
+const reviewRouter = require("./routes/reviewRoute.js")
+const authRouter = require("./routes/authRouter.js")
+
+
+app.use(express.json())
+
 dotenv.config({ path: './.env' });
 
 connectDb(); 
+
+app.use("/api/v1/review", reviewRouter)
+app.use("/api/v1/auth", authRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello brother');
