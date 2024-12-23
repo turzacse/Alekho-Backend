@@ -8,6 +8,7 @@ const reviewRouter = require("./routes/reviewRoute.js")
 const authRouter = require("./routes/authRouter.js")
 const galleryRouter = require("./routes/galleryRouter.js")
 const albumRoutes = require("./routes/albumRouter.js");
+const blogRoutes = require("./routes/blogRouter.js");
 
 
 
@@ -21,6 +22,7 @@ app.use("/api/v1/review", reviewRouter)
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/gallery", galleryRouter )
 app.use("/api/v1/albums", albumRoutes )
+app.use("/api/v1/blogs", blogRoutes )
 
 
 app.get('/', (req, res) => {
