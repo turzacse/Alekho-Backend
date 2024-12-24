@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
+require("dotenv").config();
 const dotenv = require('dotenv');
 const connectDb = require('./config/dataBase.js');
 
 //routes
 const reviewRouter = require("./routes/reviewRoute.js")
 const authRouter = require("./routes/authRouter.js")
-const galleryRouter = require("./routes/galleryRouter.js")
 const albumRoutes = require("./routes/albumRouter.js");
 const blogRoutes = require("./routes/blogRouter.js");
-const galleryRoutes = require("./routes/galleryRouter_V2.js");
+const galleryRoutes = require("./routes/galleryRoutes.js");
 
 
 
@@ -23,14 +23,13 @@ app.use("/uploads", express.static("public/uploads"));
 
 app.use("/api/v1/review", reviewRouter)
 app.use("/api/v1/auth", authRouter)
-app.use("/api/v1/gallery", galleryRouter )
 app.use("/api/v1/albums", albumRoutes )
 app.use("/api/v1/blogs", blogRoutes )
-app.use("/api/v2/gallery", galleryRoutes )
+app.use("/api/v1/gallery", galleryRoutes )
 
 
 app.get('/', (req, res) => {
-  res.send('Hello brother');
+  res.send('Hello Adnin');
 });
 
 

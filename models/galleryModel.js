@@ -27,7 +27,7 @@ const gallerySchema = new mongoose.Schema(
     },
     gallery_album: {
       type: String,
-      default: null, // Optional field
+      default: null, 
     },
     info: {
       captured_date: { type: Date, required: true },
