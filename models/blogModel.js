@@ -19,7 +19,7 @@ const blogSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    tags: {
+    hastags: {
       type: [String],
       default: [],
     },
