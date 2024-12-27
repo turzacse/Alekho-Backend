@@ -29,7 +29,7 @@ const blogSchema = new mongoose.Schema(
     },
     slug: {
       type: String,
-      unique: true,
+      // unique: true,
     },
     status: {
       type: String,
